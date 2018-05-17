@@ -1,0 +1,34 @@
+<h1>Controle de frequência</h1>
+
+<table>
+    <thead>
+        <tr>
+            
+            <th>Nome</th>
+            <th>Registro</th>
+            <% @check_in_hash.each do |key,value| %>
+                    <th>Hora de entrada para dia <%= "#{key}" %></th>
+                <% end %>
+            <% @check_out_hash.each do |key,value| %>
+                    <th>Hora de saida para dia <%= "#{key}" %></th>
+                 <% end %>
+            <th colspan="3"></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <% @users.each do |user| %>
+            <td><%= user.nome %></td>
+            <td><%= user.registro %></td>
+            <% @check_in_hash.each do |key,value| %>
+                    <td><%= "#{value}" %></td>
+                <% end %>
+            <% @check_out_hash.each do |key,value| %>
+                    <td><%= "#{value}" %></td>
+                 <% end %>
+        </tr>
+
+    </tbody>
+</table>
+<% end %>
